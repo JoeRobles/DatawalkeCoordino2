@@ -1,0 +1,22 @@
+{
+  "name": "DatawalkeCoordino2",
+  "version": "2.0.0",
+  "authors": [
+    "Joe Robles <joe.robles.pdj@gmail.com>"
+  ],
+  "description": "Hope to be accepted",
+  "main": "app.php",
+  "keywords": [
+    "base",
+    "knowledge"
+  ],
+  "license": "MIT",
+  "homepage": "http://coordino.com/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

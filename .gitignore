@@ -1,13 +1,28 @@
-# Bootstrap
-app/bootstrap*
-
-# Symfony directories
-vendor/*
-*/logs/*
-*/cache/*
-web/uploads/*
-web/bundles/*
-
-# Configuration files
-app/config/parameters.ini
+# Symfony2.3 default
+web/bundles/
+app/bootstrap.php.cache
+app/cache/*
 app/config/parameters.yml
+app/logs/*
+!app/cache/.gitkeep
+!app/logs/.gitkeep
+build/
+vendor/
+bin/
+composer.phar
+
+# Public Symfony2 web files
+web/css/
+web/images/
+web/js/
+web/uploads/
+
+# IDEs files Eclipse, Zend Studio, Netbeans, PHPStorm y TextMate2
+.buildpath
+.project
+.settings
+nbproject/
+.idea
+.tm_properties
+(?i)\~
+*~
