@@ -1,0 +1,5 @@
+datawalke_main:
+    resource: "@DatawalkeMainBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
