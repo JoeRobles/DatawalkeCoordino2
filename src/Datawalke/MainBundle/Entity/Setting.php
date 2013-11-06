@@ -5,12 +5,12 @@ namespace Datawalke\MainBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Settings
+ * Setting
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Datawalke\MainBundle\Repository\SettingsRepository")
+ * @ORM\Entity(repositoryClass="Datawalke\MainBundle\Repository\SettingRepository")
  */
-class Settings
+class Setting
 {
     /**
      * @var integer

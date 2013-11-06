@@ -5,12 +5,12 @@ namespace Datawalke\MainBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Votes
+ * Thumb
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Datawalke\MainBundle\Repository\VotesRepository")
+ * @ORM\Entity(repositoryClass="Datawalke\MainBundle\Repository\ThumbRepository")
  */
-class Votes
+class Thumb
 {
     /**
      * @var integer
@@ -20,7 +20,19 @@ class Votes
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="Post", inversedBy="thumbs")
+     * @ORM\JoinColumn(name="post_id", referencedColumnName="id")
+     */
+    protected $post;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="thumbs")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    protected $user;
+    
     /**
      * @var \DateTime
      *

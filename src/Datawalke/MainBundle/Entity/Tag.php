@@ -3,14 +3,15 @@
 namespace Datawalke\MainBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * Tags
+ * Tag
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Datawalke\MainBundle\Repository\TagsRepository")
+ * @ORM\Entity(repositoryClass="Datawalke\MainBundle\Repository\TagRepository")
  */
-class Tags
+class Tag
 {
     /**
      * @var integer
@@ -20,7 +21,12 @@ class Tags
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
+    
+    /**
+     * @ORM\ManyToMany(targetEntity="Post", mappedBy="tags")
+     */
+    private $posts;
+    
     /**
      * @var string
      *
@@ -36,6 +42,13 @@ class Tags
     private $slug;
 
 
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->posts = new ArrayCollection();
+    }
     /**
      * Get id
      *

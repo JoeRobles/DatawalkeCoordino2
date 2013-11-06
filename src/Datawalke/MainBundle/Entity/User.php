@@ -3,14 +3,15 @@
 namespace Datawalke\MainBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * Users
+ * User
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Datawalke\MainBundle\Repository\UsersRepository")
+ * @ORM\Entity(repositoryClass="Datawalke\MainBundle\Repository\UserRepository")
  */
-class Users
+class User
 {
     /**
      * @var integer
@@ -20,7 +21,37 @@ class Users
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Badge", mappedBy="user")
+     */
+    protected $badges;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Comment", mappedBy="user")
+     */
+    protected $comments;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="History", mappedBy="user")
+     */
+    protected $histories;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Post", mappedBy="user")
+     */
+    protected $posts;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="PostRev", mappedBy="user")
+     */
+    protected $postrevs;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Thumb", mappedBy="user")
+     */
+    protected $thumbs;
+    
     /**
      * @var string
      *
@@ -127,6 +158,18 @@ class Users
     private $image;
 
 
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->badges = new ArrayCollection();
+        $this->comments = new ArrayCollection();
+        $this->histories = new ArrayCollection();
+        $this->posts = new ArrayCollection();
+        $this->postrevs = new ArrayCollection();
+        $this->thumbs = new ArrayCollection();
+    }
     /**
      * Get id
      *

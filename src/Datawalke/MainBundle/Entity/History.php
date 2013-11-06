@@ -5,12 +5,12 @@ namespace Datawalke\MainBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Comments
+ * History
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Datawalke\MainBundle\Repository\CommentsRepository")
+ * @ORM\Entity(repositoryClass="Datawalke\MainBundle\Repository\HistoryRepository")
  */
-class Comments
+class History
 {
     /**
      * @var integer
@@ -20,7 +20,13 @@ class Comments
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="histories")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    protected $user;
+    
     /**
      * @var integer
      *
@@ -31,9 +37,9 @@ class Comments
     /**
      * @var string
      *
-     * @ORM\Column(name="content", type="text")
+     * @ORM\Column(name="type", type="string", length=255)
      */
-    private $content;
+    private $type;
 
     /**
      * @var \DateTime
@@ -41,13 +47,6 @@ class Comments
      * @ORM\Column(name="timestamp", type="datetime")
      */
     private $timestamp;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="votes", type="smallint")
-     */
-    private $votes;
 
 
     /**
@@ -61,33 +60,33 @@ class Comments
     }
 
     /**
-     * Set content
+     * Set type
      *
-     * @param string $content
-     * @return Comments
+     * @param string $type
+     * @return Histories
      */
-    public function setContent($content)
+    public function setType($type)
     {
-        $this->content = $content;
+        $this->type = $type;
     
         return $this;
     }
 
     /**
-     * Get content
+     * Get type
      *
      * @return string 
      */
-    public function getContent()
+    public function getType()
     {
-        return $this->content;
+        return $this->type;
     }
 
     /**
      * Set timestamp
      *
      * @param \DateTime $timestamp
-     * @return Comments
+     * @return Histories
      */
     public function setTimestamp($timestamp)
     {
@@ -107,33 +106,10 @@ class Comments
     }
 
     /**
-     * Set votes
-     *
-     * @param integer $votes
-     * @return Comments
-     */
-    public function setVotes($votes)
-    {
-        $this->votes = $votes;
-    
-        return $this;
-    }
-
-    /**
-     * Get votes
-     *
-     * @return integer 
-     */
-    public function getVotes()
-    {
-        return $this->votes;
-    }
-
-    /**
      * Set related
      *
      * @param integer $related
-     * @return Comments
+     * @return Histories
      */
     public function setRelated($related)
     {

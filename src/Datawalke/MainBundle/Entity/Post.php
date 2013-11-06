@@ -3,14 +3,15 @@
 namespace Datawalke\MainBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * Posts
+ * Post
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Datawalke\MainBundle\Repository\PostsRepository")
+ * @ORM\Entity(repositoryClass="Datawalke\MainBundle\Repository\PostRepository")
  */
-class Posts
+class Post
 {
     /**
      * @var integer
@@ -20,7 +21,24 @@ class Posts
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="posts")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    protected $user;
+    
+    /**
+     * @ORM\ManyToMany(targetEntity="Tag", inversedBy="posts")
+     * @ORM\JoinTable(name="post_tag")
+     */
+    private $tags;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="Thumb", mappedBy="post")
+     */
+    protected $thumbs;
+    
     /**
      * @var integer
      *
@@ -101,9 +119,9 @@ class Posts
     /**
      * @var string
      *
-     * @ORM\Column(name="tags", type="text")
+     * @ORM\Column(name="tag", type="text")
      */
-    private $tags;
+    private $tag;
 
     /**
      * @var integer
@@ -120,6 +138,15 @@ class Posts
     private $notify;
 
 
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->thumbs = new ArrayCollection();
+        $this->tags = new ArrayCollection();
+    }
+    
     /**
      * Get id
      *
@@ -361,26 +388,26 @@ class Posts
     }
 
     /**
-     * Set tags
+     * Set tag
      *
-     * @param string $tags
+     * @param string $tag
      * @return Posts
      */
-    public function setTags($tags)
+    public function setTag($tag)
     {
-        $this->tags = $tags;
+        $this->tag = $tag;
     
         return $this;
     }
 
     /**
-     * Get tags
+     * Get tag
      *
      * @return string 
      */
-    public function getTags()
+    public function getTag()
     {
-        return $this->tags;
+        return $this->tag;
     }
 
     /**

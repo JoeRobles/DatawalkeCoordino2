@@ -5,12 +5,12 @@ namespace Datawalke\MainBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * PostsRevs
+ * PostRev
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Datawalke\MainBundle\Repository\PostsRevsRepository")
+ * @ORM\Entity(repositoryClass="Datawalke\MainBundle\Repository\PostRevRepository")
  */
-class PostsRevs
+class PostRev
 {
     /**
      * @var integer
@@ -20,7 +20,13 @@ class PostsRevs
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="postrevs")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    protected $user;
+    
     /**
      * @var integer
      *

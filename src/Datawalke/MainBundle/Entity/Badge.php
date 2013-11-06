@@ -5,12 +5,12 @@ namespace Datawalke\MainBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Badges
+ * Badge
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Datawalke\MainBundle\Repository\BadgesRepository")
+ * @ORM\Entity(repositoryClass="Datawalke\MainBundle\Repository\BadgeRepository")
  */
-class Badges
+class Badge
 {
     /**
      * @var integer
@@ -20,7 +20,13 @@ class Badges
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="badges")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    protected $user;
+    
     /**
      * @var string
      *

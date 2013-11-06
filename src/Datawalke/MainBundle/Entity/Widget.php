@@ -5,12 +5,12 @@ namespace Datawalke\MainBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Widgets
+ * Widget
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Datawalke\MainBundle\Repository\WidgetsRepository")
+ * @ORM\Entity(repositoryClass="Datawalke\MainBundle\Repository\WidgetRepository")
  */
-class Widgets
+class Widget
 {
     /**
      * @var integer
