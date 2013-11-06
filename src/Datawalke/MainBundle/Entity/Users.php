@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Users
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Datawalke\MainBundle\Entity\UsersRepository")
+ * @ORM\Entity(repositoryClass="Datawalke\MainBundle\Repository\UsersRepository")
  */
 class Users
 {

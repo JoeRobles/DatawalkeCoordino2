@@ -24,6 +24,13 @@ class Posts
     /**
      * @var string
      *
+     * @ORM\Column(name="type", type="string", length=8)
+     */
+    private $type;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="title", type="string", length=255)
      */
     private $title;
@@ -34,6 +41,13 @@ class Posts
      * @ORM\Column(name="content", type="text")
      */
     private $content;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="text", length=7)
+     */
+    private $status;
 
     /**
      * @var \DateTime
@@ -110,6 +124,29 @@ class Posts
     }
 
     /**
+     * Set type
+     *
+     * @param string $type
+     * @return Posts
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+    
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return string 
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
      * Set title
      *
      * @param string $title
@@ -155,6 +192,29 @@ class Posts
         return $this->content;
     }
 
+    /**
+     * Set status
+     *
+     * @param string $status
+     * @return Posts
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+    
+        return $this;
+    }
+
+    /**
+     * Get status
+     *
+     * @return string 
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+    
     /**
      * Set timestamp
      *

@@ -31,6 +31,13 @@ class PostsRevs
     /**
      * @var string
      *
+     * @ORM\Column(name="type", type="string", length=8)
+     */
+    private $type;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="title", type="string", length=255)
      */
     private $title;
@@ -41,6 +48,13 @@ class PostsRevs
      * @ORM\Column(name="content", type="text")
      */
     private $content;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="text", length=6)
+     */
+    private $status;
 
     /**
      * @var \DateTime
@@ -133,6 +147,29 @@ class PostsRevs
     }
 
     /**
+     * Set type
+     *
+     * @param string $type
+     * @return PostsRevs
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+    
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return string 
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
      * Set title
      *
      * @param string $title
@@ -178,6 +215,29 @@ class PostsRevs
         return $this->content;
     }
 
+    /**
+     * Set status
+     *
+     * @param string $status
+     * @return PostsRevs
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+    
+        return $this;
+    }
+
+    /**
+     * Get status
+     *
+     * @return string 
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+    
     /**
      * Set timestamp
      *

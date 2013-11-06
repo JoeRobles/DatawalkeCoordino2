@@ -28,6 +28,13 @@ class Votes
      */
     private $timestamp;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type", type="string", length=8)
+     */
+    private $type;
+
 
     /**
      * Get id
@@ -61,4 +68,27 @@ class Votes
     {
         return $this->timestamp;
     }
+
+    /**
+     * Set type
+     *
+     * @param string $type
+     * @return Votes
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+    
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return string 
+     */
+    public function getType()
+    {
+        return $this->type;
+    }    
 }

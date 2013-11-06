@@ -29,6 +29,13 @@ class Bugs
     private $content;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="text", length=7)
+     */
+    private $status;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="submitted", type="datetime")

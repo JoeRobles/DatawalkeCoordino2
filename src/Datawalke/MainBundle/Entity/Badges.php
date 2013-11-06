@@ -38,7 +38,7 @@ class Badges
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="timestamp", type="datetimetz")
+     * @ORM\Column(name="timestamp", type="datetime")
      */
     private $timestamp;
 
