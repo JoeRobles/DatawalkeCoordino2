@@ -1,0 +1,88 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>User</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Urltitle</th>
+                <td>{{ entity.urlTitle }}</td>
+            </tr>
+            <tr>
+                <th>Joined</th>
+                <td>{{ entity.joined|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Publickey</th>
+                <td>{{ entity.publicKey }}</td>
+            </tr>
+            <tr>
+                <th>Registered</th>
+                <td>{{ entity.registered }}</td>
+            </tr>
+            <tr>
+                <th>Reputation</th>
+                <td>{{ entity.reputation }}</td>
+            </tr>
+            <tr>
+                <th>Website</th>
+                <td>{{ entity.website }}</td>
+            </tr>
+            <tr>
+                <th>Location</th>
+                <td>{{ entity.location }}</td>
+            </tr>
+            <tr>
+                <th>Age</th>
+                <td>{{ entity.age }}</td>
+            </tr>
+            <tr>
+                <th>Info</th>
+                <td>{{ entity.info }}</td>
+            </tr>
+            <tr>
+                <th>Permission</th>
+                <td>{{ entity.permission }}</td>
+            </tr>
+            <tr>
+                <th>Ip</th>
+                <td>{{ entity.ip }}</td>
+            </tr>
+            <tr>
+                <th>Answercount</th>
+                <td>{{ entity.answerCount }}</td>
+            </tr>
+            <tr>
+                <th>Commentcount</th>
+                <td>{{ entity.commentCount }}</td>
+            </tr>
+            <tr>
+                <th>Questioncoununt</th>
+                <td>{{ entity.questionCoununt }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ entity.image }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('user') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('user_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

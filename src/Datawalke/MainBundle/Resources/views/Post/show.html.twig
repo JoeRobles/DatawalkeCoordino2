@@ -1,0 +1,84 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Post</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Related</th>
+                <td>{{ entity.related }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ entity.type }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ entity.title }}</td>
+            </tr>
+            <tr>
+                <th>Content</th>
+                <td>{{ entity.content }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ entity.status }}</td>
+            </tr>
+            <tr>
+                <th>Timestamp</th>
+                <td>{{ entity.timestamp|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Lasteditedtimestamp</th>
+                <td>{{ entity.lastEditedTimestamp|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Votes</th>
+                <td>{{ entity.votes }}</td>
+            </tr>
+            <tr>
+                <th>Urltitle</th>
+                <td>{{ entity.urlTitle }}</td>
+            </tr>
+            <tr>
+                <th>Publickey</th>
+                <td>{{ entity.publicKey }}</td>
+            </tr>
+            <tr>
+                <th>Views</th>
+                <td>{{ entity.views }}</td>
+            </tr>
+            <tr>
+                <th>Tag</th>
+                <td>{{ entity.tag }}</td>
+            </tr>
+            <tr>
+                <th>Flags</th>
+                <td>{{ entity.flags }}</td>
+            </tr>
+            <tr>
+                <th>Notify</th>
+                <td>{{ entity.notify }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('post') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('post_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

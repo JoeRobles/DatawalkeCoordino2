@@ -1,0 +1,69 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>User list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Urltitle</th>
+                <th>Joined</th>
+                <th>Publickey</th>
+                <th>Registered</th>
+                <th>Reputation</th>
+                <th>Website</th>
+                <th>Location</th>
+                <th>Age</th>
+                <th>Info</th>
+                <th>Permission</th>
+                <th>Ip</th>
+                <th>Answercount</th>
+                <th>Commentcount</th>
+                <th>Questioncoununt</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('user_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.urlTitle }}</td>
+                <td>{% if entity.joined %}{{ entity.joined|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.publicKey }}</td>
+                <td>{{ entity.registered }}</td>
+                <td>{{ entity.reputation }}</td>
+                <td>{{ entity.website }}</td>
+                <td>{{ entity.location }}</td>
+                <td>{{ entity.age }}</td>
+                <td>{{ entity.info }}</td>
+                <td>{{ entity.permission }}</td>
+                <td>{{ entity.ip }}</td>
+                <td>{{ entity.answerCount }}</td>
+                <td>{{ entity.commentCount }}</td>
+                <td>{{ entity.questionCoununt }}</td>
+                <td>{{ entity.image }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('user_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('user_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('user_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}
