@@ -22,6 +22,13 @@ class PostsRevs
     private $id;
 
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="related", type="integer")
+     */
+    private $related;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="version_created", type="datetime")
@@ -420,5 +427,28 @@ class PostsRevs
     public function getFlags()
     {
         return $this->flags;
+    }
+
+    /**
+     * Set related
+     *
+     * @param integer $related
+     * @return PostsRevs
+     */
+    public function setRelated($related)
+    {
+        $this->related = $related;
+    
+        return $this;
+    }
+
+    /**
+     * Get related
+     *
+     * @return integer 
+     */
+    public function getRelated()
+    {
+        return $this->related;
     }
 }

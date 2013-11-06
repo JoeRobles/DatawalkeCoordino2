@@ -22,6 +22,13 @@ class Histories
     private $id;
 
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="related", type="integer")
+     */
+    private $related;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="type", type="string", length=255)
@@ -90,5 +97,28 @@ class Histories
     public function getTimestamp()
     {
         return $this->timestamp;
+    }
+
+    /**
+     * Set related
+     *
+     * @param integer $related
+     * @return Histories
+     */
+    public function setRelated($related)
+    {
+        $this->related = $related;
+    
+        return $this;
+    }
+
+    /**
+     * Get related
+     *
+     * @return integer 
+     */
+    public function getRelated()
+    {
+        return $this->related;
     }
 }

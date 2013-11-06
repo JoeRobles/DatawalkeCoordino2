@@ -22,6 +22,13 @@ class Comments
     private $id;
 
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="related", type="integer")
+     */
+    private $related;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="content", type="text")
@@ -120,5 +127,28 @@ class Comments
     public function getVotes()
     {
         return $this->votes;
+    }
+
+    /**
+     * Set related
+     *
+     * @param integer $related
+     * @return Comments
+     */
+    public function setRelated($related)
+    {
+        $this->related = $related;
+    
+        return $this;
+    }
+
+    /**
+     * Get related
+     *
+     * @return integer 
+     */
+    public function getRelated()
+    {
+        return $this->related;
     }
 }
