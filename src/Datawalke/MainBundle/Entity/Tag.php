@@ -104,4 +104,37 @@ class Tag
     {
         return $this->slug;
     }
+
+    /**
+     * Add posts
+     *
+     * @param \Datawalke\MainBundle\Entity\Post $posts
+     * @return Tag
+     */
+    public function addPost(\Datawalke\MainBundle\Entity\Post $posts)
+    {
+        $this->posts[] = $posts;
+    
+        return $this;
+    }
+
+    /**
+     * Remove posts
+     *
+     * @param \Datawalke\MainBundle\Entity\Post $posts
+     */
+    public function removePost(\Datawalke\MainBundle\Entity\Post $posts)
+    {
+        $this->posts->removeElement($posts);
+    }
+
+    /**
+     * Get posts
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPosts()
+    {
+        return $this->posts;
+    }
 }

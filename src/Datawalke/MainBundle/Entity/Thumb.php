@@ -103,4 +103,50 @@ class Thumb
     {
         return $this->type;
     }    
+
+    /**
+     * Set post
+     *
+     * @param \Datawalke\MainBundle\Entity\Post $post
+     * @return Thumb
+     */
+    public function setPost(\Datawalke\MainBundle\Entity\Post $post = null)
+    {
+        $this->post = $post;
+    
+        return $this;
+    }
+
+    /**
+     * Get post
+     *
+     * @return \Datawalke\MainBundle\Entity\Post 
+     */
+    public function getPost()
+    {
+        return $this->post;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \Datawalke\MainBundle\Entity\User $user
+     * @return Thumb
+     */
+    public function setUser(\Datawalke\MainBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+    
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Datawalke\MainBundle\Entity\User 
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
 }

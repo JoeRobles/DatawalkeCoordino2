@@ -524,4 +524,202 @@ class User
     {
         return $this->image;
     }
+
+    /**
+     * Add badges
+     *
+     * @param \Datawalke\MainBundle\Entity\Badge $badges
+     * @return User
+     */
+    public function addBadge(\Datawalke\MainBundle\Entity\Badge $badges)
+    {
+        $this->badges[] = $badges;
+    
+        return $this;
+    }
+
+    /**
+     * Remove badges
+     *
+     * @param \Datawalke\MainBundle\Entity\Badge $badges
+     */
+    public function removeBadge(\Datawalke\MainBundle\Entity\Badge $badges)
+    {
+        $this->badges->removeElement($badges);
+    }
+
+    /**
+     * Get badges
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getBadges()
+    {
+        return $this->badges;
+    }
+
+    /**
+     * Add comments
+     *
+     * @param \Datawalke\MainBundle\Entity\Comment $comments
+     * @return User
+     */
+    public function addComment(\Datawalke\MainBundle\Entity\Comment $comments)
+    {
+        $this->comments[] = $comments;
+    
+        return $this;
+    }
+
+    /**
+     * Remove comments
+     *
+     * @param \Datawalke\MainBundle\Entity\Comment $comments
+     */
+    public function removeComment(\Datawalke\MainBundle\Entity\Comment $comments)
+    {
+        $this->comments->removeElement($comments);
+    }
+
+    /**
+     * Get comments
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getComments()
+    {
+        return $this->comments;
+    }
+
+    /**
+     * Add history
+     *
+     * @param \Datawalke\MainBundle\Entity\History $histories
+     * @return User
+     */
+    public function addHistory(\Datawalke\MainBundle\Entity\History $histories)
+    {
+        $this->histories[] = $histories;
+    
+        return $this;
+    }
+
+    /**
+     * Remove history
+     *
+     * @param \Datawalke\MainBundle\Entity\History $histories
+     */
+    public function removeHistory(\Datawalke\MainBundle\Entity\History $histories)
+    {
+        $this->histories->removeElement($histories);
+    }
+
+    /**
+     * Get histories
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getHistories()
+    {
+        return $this->histories;
+    }
+
+    /**
+     * Add post
+     *
+     * @param \Datawalke\MainBundle\Entity\Post $posts
+     * @return User
+     */
+    public function addPost(\Datawalke\MainBundle\Entity\Post $posts)
+    {
+        $this->posts[] = $posts;
+    
+        return $this;
+    }
+
+    /**
+     * Remove posts
+     *
+     * @param \Datawalke\MainBundle\Entity\Post $posts
+     */
+    public function removePost(\Datawalke\MainBundle\Entity\Post $posts)
+    {
+        $this->posts->removeElement($posts);
+    }
+
+    /**
+     * Get posts
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPosts()
+    {
+        return $this->posts;
+    }
+
+    /**
+     * Add postrevs
+     *
+     * @param \Datawalke\MainBundle\Entity\PostRev $postrevs
+     * @return User
+     */
+    public function addPostrev(\Datawalke\MainBundle\Entity\PostRev $postrevs)
+    {
+        $this->postrevs[] = $postrevs;
+    
+        return $this;
+    }
+
+    /**
+     * Remove postrevs
+     *
+     * @param \Datawalke\MainBundle\Entity\PostRev $postrevs
+     */
+    public function removePostrev(\Datawalke\MainBundle\Entity\PostRev $postrevs)
+    {
+        $this->postrevs->removeElement($postrevs);
+    }
+
+    /**
+     * Get postrevs
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPostrevs()
+    {
+        return $this->postrevs;
+    }
+
+    /**
+     * Add thumbs
+     *
+     * @param \Datawalke\MainBundle\Entity\Thumb $thumbs
+     * @return User
+     */
+    public function addThumb(\Datawalke\MainBundle\Entity\Thumb $thumbs)
+    {
+        $this->thumbs[] = $thumbs;
+    
+        return $this;
+    }
+
+    /**
+     * Remove thumbs
+     *
+     * @param \Datawalke\MainBundle\Entity\Thumb $thumbs
+     */
+    public function removeThumb(\Datawalke\MainBundle\Entity\Thumb $thumbs)
+    {
+        $this->thumbs->removeElement($thumbs);
+    }
+
+    /**
+     * Get thumbs
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getThumbs()
+    {
+        return $this->thumbs;
+    }
 }

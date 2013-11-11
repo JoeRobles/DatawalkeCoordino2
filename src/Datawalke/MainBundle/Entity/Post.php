@@ -478,4 +478,93 @@ class Post
     {
         return $this->related;
     }
+
+    /**
+     * Set user
+     *
+     * @param \Datawalke\MainBundle\Entity\User $user
+     * @return Post
+     */
+    public function setUser(\Datawalke\MainBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+    
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Datawalke\MainBundle\Entity\User 
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * Add tags
+     *
+     * @param \Datawalke\MainBundle\Entity\Tag $tags
+     * @return Post
+     */
+    public function addTag(\Datawalke\MainBundle\Entity\Tag $tags)
+    {
+        $this->tags[] = $tags;
+    
+        return $this;
+    }
+
+    /**
+     * Remove tags
+     *
+     * @param \Datawalke\MainBundle\Entity\Tag $tags
+     */
+    public function removeTag(\Datawalke\MainBundle\Entity\Tag $tags)
+    {
+        $this->tags->removeElement($tags);
+    }
+
+    /**
+     * Get tags
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getTags()
+    {
+        return $this->tags;
+    }
+
+    /**
+     * Add thumbs
+     *
+     * @param \Datawalke\MainBundle\Entity\Thumb $thumbs
+     * @return Post
+     */
+    public function addThumb(\Datawalke\MainBundle\Entity\Thumb $thumbs)
+    {
+        $this->thumbs[] = $thumbs;
+    
+        return $this;
+    }
+
+    /**
+     * Remove thumbs
+     *
+     * @param \Datawalke\MainBundle\Entity\Thumb $thumbs
+     */
+    public function removeThumb(\Datawalke\MainBundle\Entity\Thumb $thumbs)
+    {
+        $this->thumbs->removeElement($thumbs);
+    }
+
+    /**
+     * Get thumbs
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getThumbs()
+    {
+        return $this->thumbs;
+    }
 }

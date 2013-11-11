@@ -157,4 +157,27 @@ class Comment
     {
         return $this->related;
     }
+
+    /**
+     * Set user
+     *
+     * @param \Datawalke\MainBundle\Entity\User $user
+     * @return Comment
+     */
+    public function setUser(\Datawalke\MainBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+    
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Datawalke\MainBundle\Entity\User 
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
 }
