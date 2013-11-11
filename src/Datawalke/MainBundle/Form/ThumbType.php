@@ -16,7 +16,13 @@ class ThumbType extends AbstractType
     {
         $builder
             ->add('timestamp')
-            ->add('type')
+            ->add('type', 'choice', array(
+                'choices'   => array(
+                    'up'   => 'Up',
+                    'down' => 'Down',
+                    'flag' => 'Flag',
+                ),
+            ))
             ->add('post')
             ->add('user')
         ;

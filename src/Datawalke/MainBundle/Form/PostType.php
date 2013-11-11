@@ -16,10 +16,24 @@ class PostType extends AbstractType
     {
         $builder
             ->add('related')
-            ->add('type')
+            ->add('type', 'choice', array(
+                'choices'   => array(
+                    'answer'   => 'Answer',
+                    'question' => 'Question',
+                    'approved'   => 'Approved',
+                    'pending'   => 'Pending',
+                    'spam'   => 'Spam',
+                ),
+            ))
             ->add('title')
             ->add('content')
-            ->add('status')
+            ->add('status', 'choice', array(
+                'choices'   => array(
+                    'open'   => 'Open',
+                    'closed' => 'Closed',
+                    'correct'   => 'Correct',
+                ),
+            ))
             ->add('timestamp')
             ->add('lastEditedTimestamp')
             ->add('votes')

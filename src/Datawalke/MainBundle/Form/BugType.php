@@ -16,7 +16,13 @@ class BugType extends AbstractType
     {
         $builder
             ->add('content')
-            ->add('status')
+            ->add('status', 'choice', array(
+                'choices'   => array(
+                    'open'   => 'Open',
+                    'closed' => 'Closed',
+                    'invalid'   => 'Invalid',
+                ),
+            ))
             ->add('submitted')
         ;
     }

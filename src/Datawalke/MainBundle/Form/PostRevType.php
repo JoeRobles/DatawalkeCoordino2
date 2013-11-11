@@ -17,10 +17,20 @@ class PostRevType extends AbstractType
         $builder
             ->add('related')
             ->add('versionCreated')
-            ->add('type')
+            ->add('type', 'choice', array(
+                'choices'   => array(
+                    'answer'   => 'Answer',
+                    'question' => 'Question',
+                ),
+            ))
             ->add('title')
             ->add('content')
-            ->add('status')
+            ->add('status', 'choice', array(
+                'choices'   => array(
+                    'open'   => 'Open',
+                    'closed' => 'Closed',
+                ),
+            ))
             ->add('timestamp')
             ->add('lastEditedTimestamp')
             ->add('votes')
